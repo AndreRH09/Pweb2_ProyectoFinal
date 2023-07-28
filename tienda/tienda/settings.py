@@ -32,13 +32,14 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'cafeteria',
+    'kitchenAqp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'vendor_files',
+    
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ DATABASES = {
         'NAME': 'Tienda',
         'USER': 'postgres',
         'PASSWORD': '1234',
-        'HOST': 'localhost'
+        'HOST': 'localhost',
     }
 }
 
