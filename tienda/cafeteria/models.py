@@ -21,7 +21,7 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 class lugares(models.Model):
-    id: int
-    name: models.CharField(max_length=100)
-    img: models.ImageField(upload_to='pics')
-    desc: models.TextField()
+    id = models.IntegerField()
+    name = models.CharField(max_length=100)
+    img = models.ImageField(upload_to='pics')
+    desc = models.TextField()
