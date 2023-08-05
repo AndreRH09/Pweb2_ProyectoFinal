@@ -31,15 +31,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'cafeteria',
+    'admin_interface',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'vendor_files',
+    'kitchenAqp',
+    "colorfield",
 ]
+X_FRAME_OPTIONS = "SAMEORIGIN"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
