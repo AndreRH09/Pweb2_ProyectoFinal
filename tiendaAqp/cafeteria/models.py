@@ -39,6 +39,7 @@ class Producto(models.Model):
 class Pedido(models.Model):
     cliente = models.ForeignKey('Cliente', on_delete=models.CASCADE)
     fecha = models.DateTimeField(auto_now_add=True)
+    productos = models.ManyToManyField('Producto', through='ItemPedido')
     ESTADOS_PEDIDO = [
         ('P', 'Pendiente'),
         ('E', 'En preparación'),
@@ -47,17 +48,19 @@ class Pedido(models.Model):
     estado = models.CharField(max_length=1, choices=ESTADOS_PEDIDO, default='P')
 
     def __str__(self):
-        return f"Pedido #{self.id}"
+        return f"Pedido {self.cliente} - {self.id}"
 
 
 class ItemPedido(models.Model):
     pedido = models.ForeignKey('Pedido', on_delete=models.CASCADE)
     producto = models.ForeignKey('Producto', on_delete=models.CASCADE)
     cantidad = models.PositiveIntegerField()
-    precio_unitario = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def subtotal(self):
+        return self.cantidad * self.producto.precio
 
     def __str__(self):
-        return f"Pedido {self.producto.nombre}, Cantidad {self.cantidad}, Precio unitario {self.precio_unitario}"
+        return f"Pedido {self.producto.nombre}, Cantidad {self.cantidad}, Precio unitario {self.producto.precio}"
 
 
 class Carrito(models.Model):
@@ -65,7 +68,7 @@ class Carrito(models.Model):
     productos = models.ManyToManyField('Producto', through='ItemCarrito')
 
     def __str__(self):
-        return f"Carrito de {self.usuario.username}"
+        return f"Carrito de {self.cliente.nombre}"
 
 
 class ItemCarrito(models.Model):
