@@ -2,4 +2,8 @@ from django.contrib import admin
 from .models import comidas
 # Register your models here.
 
-admin.site.register(comidas)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ["name", "price", "tipo"]
+   
+
+admin.site.register(comidas, ProductAdmin)
