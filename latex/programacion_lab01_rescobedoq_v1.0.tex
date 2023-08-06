@@ -230,7 +230,7 @@
               productos = models.ManyToManyField('Producto', through='ItemPedido')
             ESTADOS_PEDIDO = [
                 ('P', 'Pendiente'),
-                ('E', 'En preparación'),
+                ('E', 'En preparacion'),
                 ('C', 'Completado'),
             ]
              estado = models.CharField(max_length=1, choices=ESTADOS_PEDIDO, default='P')
@@ -308,11 +308,7 @@
 	\end{figure}
 	
 		\item \textbf{Cliente:}
-	\begin{lstlisting}[language=bash,caption={Creando .gitignore}][H]
-		$ vim lab01/Insertion.java
-	\end{lstlisting}
 
-	
 	Campos: nombre, apellido, correo, telefono
 	Descripción: El modelo de Cliente almacena información de los clientes que visitan la cafetería. Incluye el nombre, apellido, correo electrónico y número de teléfono de los clientes.
 	\begin{figure}[h!]
@@ -344,14 +340,14 @@
 		\caption{Tabla itemPedido}
 		\label{fig:titempedido}
 	\end{figure}
-	
+	\newpage
 		\item \textbf{Carrito:}
 		
 	Campos: cliente
 	Descripción: El modelo "Carrito" representa el carrito de compras de un cliente. Está asociado a un cliente específico y actúa como un contenedor temporal para los productos que el cliente planea comprar.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\linewidth]{img/tcarrito}
+		\includegraphics[width=0.8\linewidth]{img/tcarrito}
 		\caption{Tabla carrito}
 		\label{fig:tcarrito}
 	\end{figure}
@@ -387,7 +383,7 @@
 	Consta de de campos como nombre, imagen, descripción, precio y tiene una relación de mushos a uno con categoría, como se explicó anteriormente, y también tiene una relación de uno a muchos con itemcarrito e itempedido (ambos).
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\linewidth]{img/modProducto}
+		\includegraphics[width=0.5\linewidth]{img/modProducto}
 		\caption{Figura de del modelo producto y sus relaciones}
 		\label{fig:modproducto}
 	\end{figure}
@@ -396,7 +392,7 @@
 	El modelo cliente consta de campos como nombre, email y telefono, y tiene  una relación de uno a muchos con carrito e edido (ambos). A su vez el modelo carrito tiene una relación de uno a muchos con el modelo itemcarrito, puede tene muchos itme carrito que su su vez guardan productos. Por otro lado, el modelo pedido también tiene una relación de uno a muchos con el modelo itempedido, y esta guarda a productos.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\linewidth]{img/modClienteotros}
+		\includegraphics[width=0.5\linewidth]{img/modClienteotros}
 		\caption{Figura de del modelo cliente, carrito y pedido con sus respactivas relaciones}
 		\label{fig:modclienteotros}
 	\end{figure}
@@ -405,11 +401,11 @@
 	Antes de ver estos modelos, debemos tener en cuenta que estos modelos sirven como enlace a producto con carrito y pedido, esta relación inicialmente se consideraba de muchos a muchos, sin embargo, Django genera otra tabla por defecto con relación de uno a muchos. Estas tablas cumplen la misma funcionalidad y tienen algunos campos más.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\linewidth]{img/modItems}
+		\includegraphics[width=0.5\linewidth]{img/modItems}
 		\caption{Figura de del modelo itemcarrito e itempedido con sus respactivas relaciones}
 		\label{fig:moditems}
 	\end{figure}
-	\newpage
+	
 	\subsection{modelo ERD}
 	Ahora se mostrará la tabla con los modelos completos y sus respectivas relaciones.
 	\begin{figure}[h!]
