@@ -82,8 +82,9 @@
       {% if user.is_authenticated %}
       <a class="btn-book-a-table2" >Hola {{user.username}}</a>
       <a class="btn-book-a-table2" href="accounts/logout">Logout</a>
-      <a class="btn-book-a-table" href="admin/kitchenAqp/comidas/">Editar Items</a>
-
+        {% if user.is_superuser %}
+        <a class="btn-book-a-table" href="admin/kitchenAqp/comidas/">Editar Items</a>
+        {% endif %}
       {% else %}
       <a class="btn-book-a-table2" href="accounts/login">Login</a>
       <a class="btn-book-a-table2" href="accounts/register">Registrarse</a>
