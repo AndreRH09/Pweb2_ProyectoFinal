@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <section id="menu" class="menu">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>Lo que ofrecdemos</h2>
+                <p>Revisa a detalle los productos <span>y compra el que más te guste</span></p>
+            </div>
+            {% if producto_list %}
+            <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+                <div class="tab-pane fade active show" id="menu-starters">
+                    <div class="row gy-5">
+                        {% for producto in producto_list %}
+                        <div class="col-lg-4 menu-item">
+                            <a href="" class="glightbox"><img src="{{ producto.imagen }}" class="menu-img img-fluid" alt=""></a>
+                            <h4>{{ producto.nombre }}</h4>
+                            <p class="ingredients">
+                                {{ producto.descripcion }}
+                            </p>
+                            <p class="price">
+                                {{ producto.precio }}
+                            </p>
+                            <p class="btn btn-primary btn-lg">
+                                <a href="">ver y comprar</a>
+                            </p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <p>Lo sentimos, no hay productos disponibles ahora</p>
+            {% endif %}
+
+        </div>
+    </section>
+{% endblock %}

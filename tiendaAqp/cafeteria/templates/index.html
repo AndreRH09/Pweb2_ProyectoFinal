@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Cafetería AQP</title>
+{% endblock %}
+
+{% load static %}
+
+{% block section %}
+    <h2 data-aos="fade-up">Cafetería Arequipa<br>Nombre :)</h2>
+    <p data-aos="fade-up" data-aos-delay="100">Bienvenido a la cafetería que te dejará con la boca abierta, te ofrecemos la mejor comodidad que pueda existir...</p>
+    <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+    </div>
+
+    </div>
+    <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
+
+    <img src="{% static 'img/logo.jpg'%}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300">
+{% endblock %}
+
+{% block content %}
+<section id="why-us" class="why-us section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <p>por qué <span>nostros!</span></p>
+        </div>
+        <div class="row gy-4">
+            <div class="col-lg-12 d-flex align-items-center">
+                <div class="row gy-4">
+                    {% for icono, caracteristica, descripcion in caracteristicas_combinadas %}
+                    <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                            <i class="{{ icono }}"></i>
+                            <h4>{{ caracteristica }}</h4>
+                            <p>{{ descripcion }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <a href=""><p>Cantidad de categorías que te ofrecemos {{ num_categoria }}</p></a>
+                    <a href=""><p>Cantidad de producto que te ofrecemos {{ num_producto }}</p></a>
+                    <a href=""><p>Cantidad de clientes que visitan {{ num_cliente }}</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
