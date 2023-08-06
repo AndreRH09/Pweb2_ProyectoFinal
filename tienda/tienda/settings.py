@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "admin_interface",
     "colorfield",
     'cafeteria',
+    'account',
     'kitchenAqp',
     'django.contrib.admin',
     'django.contrib.auth',
