@@ -37,8 +37,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\itemEmail}{jperez@unsa.edu.pe}
-\newcommand{\itemStudent}{Juan Perez Luna}
+\newcommand{\itemStudent}{Andre Renzo Añasco Huamanquispe}
+\newcommand{\itemStudentc}{Frank's Javier Vilca Quispe }
+\newcommand{\itemStudenta}{Jhamil Yeider Turpo Añasco}
+\newcommand{\itemStudentb}{Melsy Melani Huamani Vargas}
 \newcommand{\itemCourse}{Programación}
 \newcommand{\itemCourseCode}{20231001}
 \newcommand{\itemSemester}{I}
@@ -47,10 +49,10 @@
 \newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
 \newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
 \newcommand{\itemAcademic}{2023 - A}
-\newcommand{\itemInput}{Del 10 Abril 2023}
-\newcommand{\itemOutput}{Al 17 Abril 2023}
-\newcommand{\itemPracticeNumber}{01}
-\newcommand{\itemTheme}{Git y GitHub}
+\newcommand{\itemInput}{Del 30 junio 2023}
+\newcommand{\itemOutput}{Al 05 agosto 2023}
+\newcommand{\itemPracticeNumber}{Trabajo Final}
+\newcommand{\itemTheme}{Trabajo Final}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -73,7 +75,6 @@
 \fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
 \fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
 \fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet}}}
-\fancyfoot[L]{Estudiante Juan Perez Perez}
 \fancyfoot[C]{\itemCourse}
 \fancyfoot[R]{Página \thepage}
 
@@ -131,7 +132,7 @@
 			\rowcolor{tablebackground}
 			\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
 			\hline 
-			{\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			{\itemStudent \par \itemStudenta \par \itemStudentb \par \itemStudentc} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
 			\hline 			
 		\end{tabular}
 	\end{table}		
@@ -259,292 +260,285 @@
 	  \end{lstlisting}
   
 	\end{itemize}
-
-
-	\section{Plantillas Bootstrap}
-	\begin{itemize}
-        \item  Se seleccionó la siguiente plantilla para el usuario final (No administrador).
-        \begin{itemize}
-        \item  Demo online: Yummy
-        \item URL: \href{https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/}{Link Aqui}
-        \end{itemize}
-    Se muestran las actividades realizadas para adecuación de plantillas, vistas, formularios en Django.
-    ...
-	\end{itemize}
-
-        
-	\section{CRUD - Core Business - Clientes finales}
-	\begin{itemize}
-		\item El núcleo de negocio del sistema de ventas para el restaurante radica en la facial vizualizacion de los contenidos y productos para el usuario, como el control y manejo para los miembros del staff:
-        \begin{enumerate}
-        \item El staff inicia sesión.
-        \item Si pertenece al grupo selecto es capaz de  editar los productos.
-        \item Se dirije a la pagina de agregar contenidos usando la interfaz de django.
-        \item El miembro del staff vizualiza mediante las tablas, los productos previamente ingresados. 
-        \item El staff es es capaz de añadir, editar o eliminar los productos. 
-        \item El staff cierra sesión.
-
-        
-        \end{enumerate}
-  	\item Todas y cada una de estas pantallas debe funcionar en la plantilla bootstrap.
-    A continuación se muestran las actividades realizadas para su construcción:  
-	\end{itemize}
-
- 	\subsection{index.html}
-        \begin{itemize}
-  	\item  El index.html es la primera impresión que los visitantes tienen de tu cafetería en línea. Proporciona la oportunidad de causar una impresión positiva al mostrar un diseño atractivo, imágenes de productos deliciosos y un diseño organizado que refleja la personalidad y el ambiente de tu cafetería.
-            \begin{itemize}
-      	\item  Navegación: El archivo index.html sirve como el centro de navegación de tu sitio. Mediante enlaces o secciones, los usuarios pueden acceder fácilmente a información esencial como los productos disponibles, la información de la cafetería, la ubicación y los precios. Esto facilita que los usuarios encuentren rápidamente lo que están buscando.
-       	\item  Presentación de Productos: A través del index.html, puedes presentar tus productos de manera atractiva. Mediante imágenes de alta calidad y descripciones detalladas, puedes mostrar la variedad y calidad de los productos que ofreces, lo que puede atraer el interés y el apetito de los visitantes.
-       
-            \end{itemize}
-        \end{itemize}
-
-        
- 	\subsection{register.html}
-        \begin{itemize}
-  	\item  La página register.html es un componente crucial en el sitio web de la cafetería, ya que permite a los visitantes registrarse y crear cuentas personalizadas
-            \begin{itemize}
-      	\item  Acceso Personalizado: La página de registro proporciona a los usuarios un acceso personalizado al sitio web de la cafetería. Al crear cuentas individuales, los clientes pueden disfrutar de una experiencia más rica y específica que incluye funciones como realizar pedidos en línea y comunicarse con el personal del staff.
-       	\item  Recopilación de Información Esencial: Durante el proceso de registro, se recopila información clave, como nombres, direcciones de correo electrónico y nombres de usuario. Esta información permite al personal de la cafetería una forma responder a las peticiones y feedback con los clientes, brindar un servicio más orientado a sus necesidades.
-       	\item  Seguridad y Autenticación: La página register.html juega un papel fundamental en la seguridad y autenticación de los usuarios. Después de registrar una cuenta, los usuarios deben iniciar sesión con sus credenciales únicas, lo que asegura que solo las personas autorizadas tengan acceso a las funciones y datos relacionados con la cuenta.
-       	\item  Base de Datos de Clientes: La información recopilada durante el registro se almacena en la base de datos de PostgreSQL. Esto no solo permite la autenticación de usuarios, sino que también proporciona a la cafetería una valiosa base de datos de clientes para futuros análisis y estrategias de marketing.
-                
-       
-            \end{itemize}
-        \end{itemize}
-
-	\section{Investigación: Email, Upload.}
-        \begin{itemize}
-            \item Email: Se utilizará la funcionalidad del uso de envío de correos electrónicos para la parte de comunicación del usuario con el staff. Para ello se utilizo, un formulario para contactarse con los clientes y den su opinion acerca del negocio
-        \end{itemize}
-        \begin{lstlisting}
-
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
-          <div class="row">
-            <div class="col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-            </div>
-            <div class="col-xl-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-          </div>
-          <div class="my-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-          </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
-        \end{lstlisting}
-	\section{a}
-	
-	\subsection{a.1}
-	\begin{itemize}	
-		\item Como es el primer laboratorio se creo el repositorio GitHub.
-		\item Se realizaron los siguientes comandos en la computadora:
-	\end{itemize}	
 		
-	\begin{lstlisting}[language=bash,caption={Creando directorio de trabajo}][H]
-		$ mkdir -p $HOME/rescobedoq/
-	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={Dirijíéndonos al directorio de trabajo}][H]
-		$ cd $HOME/rescobedoq/
-	\end{lstlisting}	
-	\begin{lstlisting}[language=bash,caption={Creando directorio para repositorio GitHub}][H]
-		$ mkdir -p $HOME/rescobedoq/programacion
-	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={Inicializando directorio para repositorio GitHub}][H]
-		$ cd $HOME/rescobedoq/programacion
-		$ echo "# programacion" >> README.md
-		$ git init
-		$ git config --global user.name "Richart Smith Escobedo Quispe"
-		$ git config --global user.email rescobedoq@gmail.com
-		$ git add README.md
-		$ git commit -m "first commit"
-		$ git branch -M main
-		$ git remote add origin https://github.com/rescobedoq/programacion.git
-		$ git push -u origin main
-	\end{lstlisting}
+	\section{Diccionario de datos}
+	\begin{itemize}
+		\item \textbf{Categoria:}
 	
-	\subsection{Commits}
-	\begin{lstlisting}[language=bash,caption={Primer Commit Creando carpeta/archivo para laboratorio 01}][H]
-		$ mkdir lab01
-		$ touch lab01/Insertion.java
-		$ git add .
-		$ git commit -m "Creando carpeta/archivo para laboratorio 01"			
-		$ git push -u origin main
-	\end{lstlisting}
-	
-	\begin{itemize}	
-		\item Se creo el archivo \textbf{.gitignore} para no considerar los archivos \textbf{*.class} que son innecesarios hacer seguimiento.
-	\end{itemize}
-	\begin{lstlisting}[language=bash,caption={Creando .gitignore}][H]
-		$ vim lab01/.gitignore
-	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={lab01/.gitignore}][H]
-		*.class
-	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={Commit: Creando .gitignore para archivos *.class}][H]
-		$ git add .
-		$ git commit -m "Creando .gitignore para archivos *.class"			
-		$ git push -u origin main
-	\end{lstlisting}
-	
-	\begin{itemize}	
-		\item Para el siguiente commit se implemento el algoritmo de ordenamiento por Inserción, se imprime el arreglo caso definido en el mismo código.
-		\item El pseudocódigo utilizado es el siguiente:
-	\end{itemize}	
-	
-	\begin{figure}[H]
+	Campos: nombre, descripcion
+	Descripción: Este modelo almacena información sobre las categorías de productos disponibles en la cafetería. Cada categoría tiene un nombre y una descripción.
+	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/pseudocodigo_insercion.png}
-		%\includesvg{img/automata.svg}
-		%\label{img:mot2}
-		%\caption{Product backlog.}
+		\includegraphics[width=1\linewidth]{img/tcategoria}
+		\caption{Tabla de categoria}
+		\label{fig:tcategoria}
 	\end{figure}
 	
-	\clearpage
+		\item \textbf{Producto:}
 	
-	\begin{lstlisting}[language=bash,caption={Creando .gitignore}][H]
-		$ vim lab01/Insertion.java
-	\end{lstlisting}
-
+	Campos: categoria, nombre, descripcion, precio, imagen
+	Descripción: El modelo de Producto guarda detalles sobre los productos ofrecidos en la cafetería. Cada producto está asociado a una categoría y tiene un nombre, descripción, precio y una imagen.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{img/tproducto}
+		\caption{Tabla producto}
+		\label{fig:tproducto}
+	\end{figure}
 	
-	\begin{lstlisting}[language=bash,caption={Compilando y probando código}][H]
-		$ cd lab01
-		$ javac Insertion.java
-		$ java Insertion
-		5 2 4 6 1 3 
-		5 5 4 6 1 3 
-		2 5 5 6 1 3 
-		2 4 5 6 1 3 
-		2 2 4 5 6 3 
-		1 2 4 4 5 6
-	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={Commit: Probando algoritmo de Inserción con arreglo}][H]
-		$ git add .
-		$ git commit -m "Probando algoritmo de Insercion con arreglo"			
-		$ git push -u origin main
-	\end{lstlisting}
+		\item \textbf{Cliente:}
 	
+	
+	Campos: nombre, apellido, correo, telefono
+	Descripción: El modelo de Cliente almacena información de los clientes que visitan la cafetería. Incluye el nombre, apellido, correo electrónico y número de teléfono de los clientes.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{img/tcliente}
+		\caption{tabla de cliente}
+		\label{fig:tcliente}
+	\end{figure}
+	
+		\item \textbf{Pedido:}
 		
-	\subsection{Estructura de laboratorio 01}
-	\begin{itemize}	
-		\item El contenido que se entrega en este laboratorio es el siguiente:
-	\end{itemize}
+		Campos: cliente, producto, fecha-pedido, estado
+		Descripción: El modelo de Pedido registra los pedidos realizados por los clientes. Cada pedido tiene un cliente asociado, un producto solicitado, la fecha del pedido y su estado (pendiente, entregado, etc.).
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=1\linewidth]{img/tpedido}
+			\caption{Tabla pedido}
+			\label{fig:tpedido}
+		\end{figure}
+		
 	
-\begin{lstlisting}[style=ascii-tree]
-lab01/
-|--- Insertion.java
-|--- latex
-    |--- img
-    |   |--- logo_abet.png
-    |   |--- logo_episunsa.png
-    |   |--- logo_unsa.jpg
-    |   |--- pseudocodigo_insercion.png    
-    |--- programacion_lab01_rescobedoq_v1.0.pdf    
-    |--- programacion_lab01_rescobedoq_v1.0.tex
-    |--- src
-        |--- Insertion01.java
-\end{lstlisting}    
+		\item \textbf{itemPedido:}
+	
+	Campos: pedido, cantidad
+	Descripción: El modelo de DetallePedido guarda información sobre los productos y las cantidades asociadas a un pedido específico. Cada detalle de pedido está vinculado a un pedido y registra la cantidad de un producto solicitado.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{img/titempedido}
+		\caption{Tabla itemPedido}
+		\label{fig:titempedido}
+	\end{figure}
+	
+		\item \textbf{Carrito:}
+		
+	Campos: cliente
+	Descripción: El modelo "Carrito" representa el carrito de compras de un cliente. Está asociado a un cliente específico y actúa como un contenedor temporal para los productos que el cliente planea comprar.
+	\begin{figure}[h!]
+		\centering
+        
+		\includegraphics[width=0.5\linewidth]{lab01/latex/img/tcarrito.png}
+		\caption{Tabla carrito}
+		\label{fig:tcarrito}
+	\end{figure}
 
-\section{Pregunta: ¿Cúal es el comportamiento del algoritmo de ordenamiento por inserción?}
+        \newpage
+		\item \textbf{ItemCarrito:}
+		
+	Campos: carrito, producto, cantidad
+	Descripción: El modelo "ItemCarrito" registra los productos y las cantidades agregadas al carrito de compras de un cliente. Cada elemento del carrito está vinculado a un carrito, un producto específico y la cantidad deseada.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=.75\linewidth]{img/titemcarrito}
+		\caption{Tabla itemCarrito}
+		\label{fig:titemcarrito}
+	\end{figure}
+	
+	\end{itemize}
+		
+	\section{Diagrama Entidad-Relación (ERD)}
+	En esta sección se mostrará los modelos creados con sus respectivos campos en el proyecto y la relación entre cada uno de ellos.
+	
+	Inicialmente se mostrará cada uno de las tablas y sus relaciones, para una mejor comprensión, las tablas genteradas son: categoria, producto, cliente, carrito, pedido, itemcarrito e itempedido.
+	
+	\subsection{modelo categoria}
+	Consta de un campo "nombre" y tiene una relación de uno a muchos con el modelo producto, esto porque una categoría (bebidas, postres y entre otros) pueden tener muchos productos.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=.7\linewidth]{img/modCategoria}
+		\caption{Figura de del modelo categoria y sus relaciones}
+		\label{fig:modcategoria}
+	\end{figure}
+	
+	\subsection{modelo producto}
+	Consta de de campos como nombre, imagen, descripción, precio y tiene una relación de mushos a uno con categoría, como se explicó anteriormente, y también tiene una relación de uno a muchos con itemcarrito e itempedido (ambos).
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=.5\linewidth]{img/modProducto}
+		\caption{Figura de del modelo producto y sus relaciones}
+		\label{fig:modproducto}
+	\end{figure}
+	\newpage
+	\subsection{modelo cliente, carrito, pedido}
+	El modelo cliente consta de campos como nombre, email y telefono, y tiene  una relación de uno a muchos con carrito e edido (ambos). A su vez el modelo carrito tiene una relación de uno a muchos con el modelo itemcarrito, puede tene muchos itme carrito que su su vez guardan productos. Por otro lado, el modelo pedido también tiene una relación de uno a muchos con el modelo itempedido, y esta guarda a productos.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{img/modClienteotros}
+		\caption{Figura de del modelo cliente, carrito y pedido con sus respactivas relaciones}
+		\label{fig:modclienteotros}
+	\end{figure}
+	\newpage
+	\subsection{modelo cliente, carrito, pedido}
+	Antes de ver estos modelos, debemos tener en cuenta que estos modelos sirven como enlace a producto con carrito y pedido, esta relación inicialmente se consideraba de muchos a muchos, sin embargo, Django genera otra tabla por defecto con relación de uno a muchos. Estas tablas cumplen la misma funcionalidad y tienen algunos campos más.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=.7\linewidth]{img/modItems}
+		\caption{Figura de del modelo itemcarrito e itempedido con sus respactivas relaciones}
+		\label{fig:moditems}
+	\end{figure}
+	\newpage
+	\subsection{modelo ERD}
+	Ahora se mostrará la tabla con los modelos completos y sus respectivas relaciones.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=.7\linewidth]{img/DER}
+		\caption{Se puede visualizar el Diagrama Entidad Relación completo, con los 7 modelos creados en código}
+		\label{fig:der}
+	\end{figure}	
+
+
+ \newpage
+	\section{Administración con Django}
+	\subsection{Setup}
+\begin{enumerate}
+	\item Se utilizo django como framework de trabajo
+	\item Se creo un entorno virtual "n" para no tener conflictos con otros proyectos
+	\item Se descargaron librerias de python con pip como:
+		 \begin{itemize}
+			 \item pillow
+			 \item psycopg2
+			 \item sqlparse
+		 \end{itemize}
+	\item se descargo postgres y pg admin como base de datos.
+	\item se creo el proyecto con "python startproject tienda" 
+\end{enumerate}
 	\begin{itemize}
-		\item El algoritmo muestra un comportamiento cuadrático de O(n²).
-		\item Se trabajarón los peores casos desde una arreglo de tamaño 1 hasta N.
-		\item Para obtener un grafico ideal se utilizó N=10,000.
-	\end{itemize}		
-
-	\section{\textcolor{red}{Rúbricas}}
-	
-	\subsection{\textcolor{red}{Entregable Informe}}
-	\begin{table}[H]
-		\caption{Tipo de Informe}
-		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
-		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
-		\begin{tabular}{|p{3cm}|p{12cm}|}
-			\hline
-			\multicolumn{2}{|c|}{\textbf{\textcolor{red}{Informe}}}  \\
-			\hline 
-			\textbf{\textcolor{red}{Latex}} & \textcolor{blue}{El informe está en formato PDF desde Latex,  con un formato limpio (buena presentación) y facil de leer.}   \\ 
-			\hline 
-			
-			
-		\end{tabular}
-	}
-	\end{table}
-	
-	\clearpage
-	
-	\subsection{\textcolor{red}{Rúbrica para el contenido del Informe y demostración}}
-	\begin{itemize}			
-		\item El alumno debe marcar o dejar en blanco en celdas de la columna \textbf{Checklist} si cumplio con el ítem correspondiente.
-		\item Si un alumno supera la fecha de entrega,  su calificación será sobre la nota mínima aprobada, siempre y cuando cumpla con todos lo items.
-		\item El alumno debe autocalificarse en la columna \textbf{Estudiante} de acuerdo a la siguiente tabla:
-	
-		\begin{table}[ht]
-			\caption{Niveles de desempeño}
-			\begin{center}
-			\begin{tabular}{ccccc}
-    			\hline
-    			 & \multicolumn{4}{c}{Nivel}\\
-    			\cline{1-5}
-    			\textbf{Puntos} & Insatisfactorio 25\%& En Proceso 50\% & Satisfactorio 75\% & Sobresaliente 100\%\\
-    			\textbf{2.0}&0.5&1.0&1.5&2.0\\
-    			\textbf{4.0}&1.0&2.0&3.0&4.0\\
-    		\hline
-			\end{tabular}
-		\end{center}
-	\end{table}	
-	
+\section{Plantillas Bootstrap}
+\begin{itemize}
+	\item  Se seleccionó la siguiente plantilla para el usuario final (No administrador).
+	\begin{itemize}
+	\item  Demo online: Yummy
+	\item URL: \href{https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/}{Link Aqui}
 	\end{itemize}
-	
-	\begin{table}[H]
-		\caption{Rúbrica para contenido del Informe y demostración}
-		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
-		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
-		%\begin{center}
-		\begin{tabular}{|p{2.7cm}|p{7cm}|x{1.3cm}|p{1.2cm}|p{1.5cm}|p{1.1cm}|}
-			\hline
-    		\multicolumn{2}{|c|}{Contenido y demostración} & Puntos & Checklist & Estudiante & Profesor\\
-			\hline
-			\textbf{1. GitHub} & Hay enlace URL activo del directorio para el  laboratorio hacia su repositorio GitHub con código fuente terminado y fácil de revisar. &2 &X &2 & \\ 
-			\hline
-			\textbf{2. Commits} &  Hay capturas de pantalla de los commits más importantes con sus explicaciones detalladas. (El profesor puede preguntar para refrendar calificación). &4 & & & \\ 
-			\hline 
-			\textbf{3. Código fuente} &  Hay porciones de código fuente importantes con numeración y explicaciones detalladas de sus funciones. &2 &X &2 & \\ 
-			\hline 
-			\textbf{4. Ejecución} & Se incluyen ejecuciones/pruebas del código fuente  explicadas gradualmente. &2 &X &2 & \\ 
-			\hline			
-			\textbf{5. Pregunta} & Se responde con completitud a la pregunta formulada en la tarea.  (El profesor puede preguntar para refrendar calificación).  &2 &X &2 & \\ 
-			\hline	
-			\textbf{6. Fechas} & Las fechas de modificación del código fuente estan dentro de los plazos de fecha de entrega establecidos. &2 &X &2 & \\ 
-			\hline 
-			\textbf{7. Ortografía} & El documento no muestra errores ortográficos. &2 &X &2 & \\ 
-			\hline 
-			\textbf{8. Madurez} & El Informe muestra de manera general una evolución de la madurez del código fuente,  explicaciones puntuales pero precisas y un acabado impecable.   (El profesor puede preguntar para refrendar calificación).  &4 & & & \\ 
-			\hline
-			\multicolumn{2}{|c|}{\textbf{Total}} &20 & &12 & \\ 
-			\hline
-		\end{tabular}
-		%\end{center}
-		%\label{tab:multicol}
-		}
-	\end{table}
-	
-\clearpage
+Se muestran las actividades realizadas para adecuación de plantillas, vistas, formularios en Django.
 
-\section{Referencias}
-\begin{itemize}			
-	\item \url{https://www.w3schools.com/java/default.asp}
-	\item \url{https://www.geeksforgeeks.org/insertion-sort/}
-\end{itemize}	
+	\item  Se adecuo a una carpeta static, todos aquellos elementos como su nombre lo indica, estaticos.
+	
+	\item  Esto incluye imagenes, hojas de estilos y javascripts.
+
+\end{itemize}
+	\begin{figure}[h]
+	  \centering
+	  \includegraphics[width=0.6\textwidth]{lab01/latex/img/static.png}
+	  \caption{Partes staticas.}
+	  \label{fig:imagen-ejemplo}
+	\end{figure}
+	\item  Para usar los elementos de tipo dinamico se modifico usando diccionarios de contexto que permitan representar los elementos de la base de datos 
+	\begin{lstlisting}
+
+		{% for comids in comids %}
+		{% if comids.tipo == '1' %}
+		<!-- Bebidas -->    
+		<div class="row gy-5">
+		  <div class="col-lg-4 menu-item">
+			<img src="{{comids.img.url}}" class="menu-img img-fluid" alt="">
+			<h4>{{comids.name}}</h4>
+			<p class="ingredients">
+			  {{comids.desc}}
+			</p>
+			<p class="price">
+			  ${{comids.price}}
+			</p>
+		  </div><!-- Menu Item -->
+		</div>
+		{% endif %}
+		{% endfor %}
+	\end{lstlisting}
+\end{itemize}
+
+	
+\section{CRUD - Core Business - Clientes finales}
+\begin{itemize}
+	\item El núcleo de negocio del sistema de ventas para el restaurante radica en la facial vizualizacion de los contenidos y productos para el usuario, como el control y manejo para los miembros del staff:
+	\begin{enumerate}
+	\item El staff inicia sesión.
+	\item Si pertenece al grupo selecto es capaz de  editar los productos.
+	\item Se dirije a la pagina de agregar contenidos usando la interfaz de django.
+	\item El miembro del staff vizualiza mediante las tablas, los productos previamente ingresados. 
+	\item El staff es es capaz de añadir, editar o eliminar los productos. 
+	\item El staff cierra sesión.
+
+	
+	\end{enumerate}
+  \item Todas y cada una de estas pantallas debe funcionar en la plantilla bootstrap.
+A continuación se muestran las actividades realizadas para su construcción:  
+\end{itemize}
+
+ \subsection{index.html}
+	\begin{itemize}
+  \item  El index.html es la primera impresión que los visitantes tienen de tu cafetería en línea. Proporciona la oportunidad de causar una impresión positiva al mostrar un diseño atractivo, imágenes de productos deliciosos y un diseño organizado que refleja la personalidad y el ambiente de tu cafetería.
+		\begin{itemize}
+	  \item  Navegación: El archivo index.html sirve como el centro de navegación de tu sitio. Mediante enlaces o secciones, los usuarios pueden acceder fácilmente a información esencial como los productos disponibles, la información de la cafetería, la ubicación y los precios. Esto facilita que los usuarios encuentren rápidamente lo que están buscando.
+	   \item  Presentación de Productos: A través del index.html, puedes presentar tus productos de manera atractiva. Mediante imágenes de alta calidad y descripciones detalladas, puedes mostrar la variedad y calidad de los productos que ofreces, lo que puede atraer el interés y el apetito de los visitantes.
+   
+		\end{itemize}
+	\end{itemize}
+
+	
+ \subsection{register.html}
+	\begin{itemize}
+  \item  La página register.html es un componente crucial en el sitio web de la cafetería, ya que permite a los visitantes registrarse y crear cuentas personalizadas
+		\begin{itemize}
+	  \item  Acceso Personalizado: La página de registro proporciona a los usuarios un acceso personalizado al sitio web de la cafetería. Al crear cuentas individuales, los clientes pueden disfrutar de una experiencia más rica y específica que incluye funciones como realizar pedidos en línea y comunicarse con el personal del staff.
+	   \item  Recopilación de Información Esencial: Durante el proceso de registro, se recopila información clave, como nombres, direcciones de correo electrónico y nombres de usuario. Esta información permite al personal de la cafetería una forma responder a las peticiones y feedback con los clientes, brindar un servicio más orientado a sus necesidades.
+	   \item  Seguridad y Autenticación: La página register.html juega un papel fundamental en la seguridad y autenticación de los usuarios. Después de registrar una cuenta, los usuarios deben iniciar sesión con sus credenciales únicas, lo que asegura que solo las personas autorizadas tengan acceso a las funciones y datos relacionados con la cuenta.
+	   \item  Base de Datos de Clientes: La información recopilada durante el registro se almacena en la base de datos de PostgreSQL. Esto no solo permite la autenticación de usuarios, sino que también proporciona a la cafetería una valiosa base de datos de clientes para futuros análisis y estrategias de marketing.
+			
+   
+		\end{itemize}
+	\end{itemize}
+
+\section{Investigación: Email, Upload.}
+	\begin{itemize}
+		\item Email: Se utilizará la funcionalidad del uso de envío de correos electrónicos para la parte de comunicación del usuario con el staff. Para ello se utilizo, un formulario para contactarse con los clientes y den su opinion acerca del negocio
+	\end{itemize}
+	\begin{lstlisting}
+
+	<form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+	  <div class="row">
+		<div class="col-xl-6 form-group">
+		  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+		</div>
+		<div class="col-xl-6 form-group">
+		  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+		</div>
+	  </div>
+	  <div class="form-group">
+		<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+	  </div>
+	  <div class="form-group">
+		<textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+	  </div>
+	  <div class="my-3">
+		<div class="loading">Loading</div>
+		<div class="error-message"></div>
+		<div class="sent-message">Your message has been sent. Thank you!</div>
+	  </div>
+	  <div class="text-center"><button type="submit">Send Message</button></div>
+	\end{lstlisting}
+	
+	\section{Video}
+	\begin{itemize}			
+		\item Se presenta un video con los integrantes del proyecto \href{https://drive.google.com/drive/folders/1n5q-sokJrMleBdvlblGO5rhaxiXWwcVs?usp=sharing}{Explicacion del proyecto}
+	\end{itemize}
+
+	\section{REFERENCIAS}
+	
+	\begin{itemize}			
+		\item \url{https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/}
+		\item \url{https://github.com/AndreRH09/Pweb2_ProyectoFinal.git}
+		\item \url{https://www.codingforentrepreneurs.com/blog/html-template-to-pdf-in-django/}
+	\end{itemize}	
 	
 %\clearpage
 %\bibliographystyle{apalike}
