@@ -32,6 +32,9 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE)
 
+    def get_absolute_url(self):
+        return reverse('producto-detail', args=[str(self.id)])
+    
     def __str__(self):
         return self.nombre
 
