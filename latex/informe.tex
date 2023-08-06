@@ -259,10 +259,92 @@
 	  \end{lstlisting}
   
 	\end{itemize}
+
+
+	\section{Plantillas Bootstrap}
+	\begin{itemize}
+        \item  Se seleccionó la siguiente plantilla para el usuario final (No administrador).
+        \begin{itemize}
+        \item  Demo online: Yummy
+        \item URL: \href{https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/}{Link Aqui}
+        \end{itemize}
+    Se muestran las actividades realizadas para adecuación de plantillas, vistas, formularios en Django.
+    ...
+	\end{itemize}
+
+        
+	\section{CRUD - Core Business - Clientes finales}
+	\begin{itemize}
+		\item El núcleo de negocio del sistema de ventas para el restaurante radica en la facial vizualizacion de los contenidos y productos para el usuario, como el control y manejo para los miembros del staff:
+        \begin{enumerate}
+        \item El staff inicia sesión.
+        \item Si pertenece al grupo selecto es capaz de  editar los productos.
+        \item Se dirije a la pagina de agregar contenidos usando la interfaz de django.
+        \item El miembro del staff vizualiza mediante las tablas, los productos previamente ingresados. 
+        \item El staff es es capaz de añadir, editar o eliminar los productos. 
+        \item El staff cierra sesión.
+
+        
+        \end{enumerate}
+  	\item Todas y cada una de estas pantallas debe funcionar en la plantilla bootstrap.
+    A continuación se muestran las actividades realizadas para su construcción:  
+	\end{itemize}
+
+ 	\subsection{index.html}
+        \begin{itemize}
+  	\item  El index.html es la primera impresión que los visitantes tienen de tu cafetería en línea. Proporciona la oportunidad de causar una impresión positiva al mostrar un diseño atractivo, imágenes de productos deliciosos y un diseño organizado que refleja la personalidad y el ambiente de tu cafetería.
+            \begin{itemize}
+      	\item  Navegación: El archivo index.html sirve como el centro de navegación de tu sitio. Mediante enlaces o secciones, los usuarios pueden acceder fácilmente a información esencial como los productos disponibles, la información de la cafetería, la ubicación y los precios. Esto facilita que los usuarios encuentren rápidamente lo que están buscando.
+       	\item  Presentación de Productos: A través del index.html, puedes presentar tus productos de manera atractiva. Mediante imágenes de alta calidad y descripciones detalladas, puedes mostrar la variedad y calidad de los productos que ofreces, lo que puede atraer el interés y el apetito de los visitantes.
+       
+            \end{itemize}
+        \end{itemize}
+
+        
+ 	\subsection{register.html}
+        \begin{itemize}
+  	\item  La página register.html es un componente crucial en el sitio web de la cafetería, ya que permite a los visitantes registrarse y crear cuentas personalizadas
+            \begin{itemize}
+      	\item  Acceso Personalizado: La página de registro proporciona a los usuarios un acceso personalizado al sitio web de la cafetería. Al crear cuentas individuales, los clientes pueden disfrutar de una experiencia más rica y específica que incluye funciones como realizar pedidos en línea y comunicarse con el personal del staff.
+       	\item  Recopilación de Información Esencial: Durante el proceso de registro, se recopila información clave, como nombres, direcciones de correo electrónico y nombres de usuario. Esta información permite al personal de la cafetería una forma responder a las peticiones y feedback con los clientes, brindar un servicio más orientado a sus necesidades.
+       	\item  Seguridad y Autenticación: La página register.html juega un papel fundamental en la seguridad y autenticación de los usuarios. Después de registrar una cuenta, los usuarios deben iniciar sesión con sus credenciales únicas, lo que asegura que solo las personas autorizadas tengan acceso a las funciones y datos relacionados con la cuenta.
+       	\item  Base de Datos de Clientes: La información recopilada durante el registro se almacena en la base de datos de PostgreSQL. Esto no solo permite la autenticación de usuarios, sino que también proporciona a la cafetería una valiosa base de datos de clientes para futuros análisis y estrategias de marketing.
+                
+       
+            \end{itemize}
+        \end{itemize}
+
+	\section{Investigación: Email, Upload.}
+        \begin{itemize}
+            \item Email: Se utilizará la funcionalidad del uso de envío de correos electrónicos para la parte de comunicación del usuario con el staff. Para ello se utilizo, un formulario para contactarse con los clientes y den su opinion acerca del negocio
+        \end{itemize}
+        \begin{lstlisting}
+
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+          <div class="row">
+            <div class="col-xl-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-xl-6 form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        \end{lstlisting}
+	\section{a}
 	
-	\section{Actividades con el repositorio GitHub}
-	
-	\subsection{Creando e inicializando repositorio GitHub}
+	\subsection{a.1}
 	\begin{itemize}	
 		\item Como es el primer laboratorio se creo el repositorio GitHub.
 		\item Se realizaron los siguientes comandos en la computadora:
