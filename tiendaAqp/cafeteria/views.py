@@ -61,3 +61,8 @@ class ReservaMesaListView(generic.ListView):
 
 class PedidoListView(generic.ListView):
     model = Pedido
+
+
+    ## vistas detalladas 
+class ProductoDetailView(generic.DetailView):
+    model = Producto

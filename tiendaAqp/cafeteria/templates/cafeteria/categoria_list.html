@@ -43,7 +43,7 @@
                                 {{ producto.precio }}
                             </p>
                             <p class="btn btn-primary btn-lg">
-                                <a href="">comprar</a>
+                                <a href="{{ producto.get_absolute_url }}">comprar</a>
                             </p>
                         </div>
                         {% endfor %}
