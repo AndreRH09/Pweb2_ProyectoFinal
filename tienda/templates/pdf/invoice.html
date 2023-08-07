@@ -39,14 +39,77 @@
     <body>
         <div class='wrapper'>
             <div class='header'>
-                <p class='title'>Invoice #{{ invoice_number}}</p>
+                <p class='title'>Menu</p>
             </div>
-        <div>
+        </div>
+        
         <div class='details'>
-            Bill to: {{ customer_name }}<br/>
-            Amount: {{ amount }} <br/>
-            Date: {{ date }}
-            <hr class='hrItem' />
+            
+        <h1>Bebidas</h1>
+        <table border="1"     ;>
+            <thead >
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+            </thead>
+            
+            <tbody>                
+                {% for comida in comidas %}
+                {% if comida.tipo == '1' %}
+                    <tr>
+                        <td>{{ comida.name }}</td>
+                        <td>{{ comida.price }}</td>
+                        <td>{{ comida.tipo }}</td>
+                    </tr>
+                {% endif %}
+                {% endfor%}
+            </tbody>
+        </table>    
+        
+        
+        <h1>Postres</h1>
+        <table border="1"     ;>
+            <thead >
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+            </thead>
+            
+            <tbody>                
+                {% for comida in comidas %}
+                {% if comida.tipo == '2' %}
+                    <tr>
+                        <td>{{ comida.name }}</td>
+                        <td>{{ comida.price }}</td>
+                        <td>{{ comida.tipo }}</td>
+                    </tr>
+                {% endif %}
+                {% endfor%}
+            </tbody>
+        </table>    
+
+        <br>
+        <h1>Bebidas</h1>
+        <table border="1"     ;>
+            <thead >
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+            </thead>
+            
+            <tbody>                
+                {% for comida in comidas %}
+                {% if comida.tipo == '3' %}
+                    <tr>
+                        <td>{{ comida.name }}</td>
+                        <td>{{ comida.price }}</td>
+                        <td>{{ comida.tipo }}</td>
+                    </tr>
+                {% endif %}
+                {% endfor%}
+            </tbody>
+        </table>    
+        
         </div>
     </div>
     </body>
