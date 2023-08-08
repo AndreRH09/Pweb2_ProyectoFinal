@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section id="book-a-table" class="book-a-table">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+        <h2>Login</h2>
+        <p>Únete a nuestra<span> comunidad</span>.</p>
+        </div>
+
+        <div class="row g-0">
+
+        <div class="col-lg-6 reservation-img" style="background-image: url({% static 'img/latte.png' %});"
+            data-aos="zoom-out" data-aos-delay="200">
+        </div>
+
+        <div class="col-lg-6 d-flex align-items-center reservation-form-bg">
+            <form action="{% url 'login' %}" method="post" class="php-email-form">
+            {% csrf_token %}
+            <div class="row gy-4">
+                <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" id="username"
+                        data-rule="minlen:1" placeholder="Nombre de Usuario">
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password"
+                        data-rule="minlen:1" placeholder="Contraseña">
+                </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </div>
+            <div class="book-a-table" style="font-weight: 600; background: #df1529; color: white; text-align: center">
+                {% for message in messages %}
+                <h3>{{ message }}</h3>
+                {% endfor %}
+            </div>
+            </form>
+        </div><!-- End Reservation Form -->
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

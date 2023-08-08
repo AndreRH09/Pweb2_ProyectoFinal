@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="mb-4">Tu Carrito de Compras</h2>
+        {% if pedido_list %}
+            {% for pedido in pedido_list %}
+            <table class="table table-striped">
+        <div class="section-header">
+            <p>{{ cliente }}</p>
+        </div>
+                <thead>
+                    <tr>
+                        <th>Pedido</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio unitario</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for itempedido in pedido.itempedido_set.all %}
+                        <tr>
+                            <td>{{ itempedido.pedido }}</td>
+                            <td>{{ itempedido.producto }}</td>
+                            <td>{{ itempedido.cantidad }}</td>
+                            <td>${{ itempedido.producto.precio }}</td>
+                            <td>${{ itempedido.subtotal }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p><strong>Nuestro cliente:</strong> {{ pedido.cliente }}</p>
+            <p><strong>Estado de entrega:</strong> {{ pedido.get_estado_display }}</p>
+            <p><strong>Fecha del pedido:</strong> {{ pedido.fecha }}</p>
+
+            <p class="mb-4"><strong>Total del pedido:</strong> ${{ pedidos_monto_total }}</p>
+
+            
+            <form method="post" action="">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Realizar Pedido</button>
+            </form>
+            {% endfor %}
+        {% else %}
+            <p class="mt-4">No tienes pedidos en tu carrito...</p>
+        {% endif %}
+    </div>
+{% endblock %}
+

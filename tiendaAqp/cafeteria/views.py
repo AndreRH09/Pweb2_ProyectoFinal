@@ -67,7 +67,10 @@ class ReservaMesaListView(generic.ListView):
 
 class PedidoListView(generic.ListView):
     model = Pedido
-
+    
+    def pedidos_monto_total(self):
+        total = sum(pedido.total_monto(self) for pedido in Pedido.objects.all())
+        return total
 
     ## vistas detalladas 
 class ProductoDetailView(generic.DetailView):

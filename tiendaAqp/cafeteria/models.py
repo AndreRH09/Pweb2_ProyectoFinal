@@ -50,6 +50,12 @@ class Pedido(models.Model):
     ]
     estado = models.CharField(max_length=1, choices=ESTADOS_PEDIDO, default='P')
 
+    def get_estado_display(self):
+        return dict(self.ESTADOS_PEDIDO)[self.estado]
+    
+    def total_monto(self, obj):
+        return sum(item.subtotal() for item in obj.itempedido_set.all())
+    
     def __str__(self):
         return f"Pedido {self.cliente} - {self.id}"
 
