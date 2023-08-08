@@ -5,20 +5,56 @@
 {% endblock %}
 
 {% load static %}
-
+                
 {% block section %}
-    <h2 data-aos="fade-up">Cafetería Arequipa<br>Nombre :)</h2>
-    <p data-aos="fade-up" data-aos-delay="100">Bienvenido a la cafetería que te dejará con la boca abierta, te ofrecemos la mejor comodidad que pueda existir...</p>
-    <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-    </div>
+<section id="hero" class="hero d-flex align-items-center section-bg">
+    <div class="container">
+        <div class="row justify-content-between gy-5">
 
+            <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+                <h2 data-aos="fade-up">Cafetería Arequipa<br><span>Café Aromático</span></h2>
+                <p data-aos="fade-up" data-aos-delay="100">Bienvenido a la cafetería que te dejará con la boca abierta, te ofrecemos la mejor comodidad que pueda existir...</p>
+                <h3 style="font-style: italic; font-weight: bold;">Historia de Café Aromático</h3>
+                <p>
+                    Café Aromático nació hace una década como el sueño de dos apasionados del café, Julia y Alejandro. A lo largo de los años, hemos buscado los mejores granos y tostado con amor, creando un espacio acogedor donde la comunidad se reúne para compartir momentos y sonrisas.
+                </p>
+            </div>
+            
+            <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
+                <img src="{% static 'img/logo.jpg'%}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300">
+                <p>
+                    Nuestra prioridad es crear experiencias excepcionales de café. Valoramos la calidad, la sostenibilidad y la creatividad en cada taza que servimos. Nuestro objetivo es ser un lugar donde las personas se conecten, se inspiren y disfruten de momentos especiales.
+                </p>
+            </div>
+        </div>
     </div>
-    <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
-
-    <img src="{% static 'img/logo.jpg'%}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300">
+</section>
 {% endblock %}
 
 {% block content %}
+<section id="espacios" class="espacios section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h2>Nuestros Espacios</h2>
+            <p>Descubre nuestros acogedores espacios para <span>disfrutar de tu café.</span></p>
+        </div>
+        <div class="row gy-4">
+            <div class="col-lg-12 d-flex align-items-center">
+                <div class="row gy-4">
+                    {% for imagen in espacios %}
+                    <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                            <img src="{% static imagen %}" alt="" class="img-fluid">
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="why-us" class="why-us section-bg">
     <div class="container" data-aos="fade-up">
         <div class="section-header">
@@ -36,12 +72,92 @@
                         </div>
                     </div>
                     {% endfor %}
-                    <a href=""><p>Cantidad de categorías que te ofrecemos {{ num_categoria }}</p></a>
+                    <!-- <a href=""><p>Cantidad de categorías que te ofrecemos {{ num_categoria }}</p></a>
                     <a href=""><p>Cantidad de producto que te ofrecemos {{ num_producto }}</p></a>
-                    <a href=""><p>Cantidad de clientes que visitan {{ num_cliente }}</p></a>
+                    <a href=""><p>Cantidad de clientes que visitan {{ num_cliente }}</p></a> -->
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- ======= Testimonials Section ======= 
+<section id="testimonials" class="testimonials section-bg">
+    <div class="container" data-aos="fade-up">
+
+    <div class="section-header">
+        <h2>Testimomios</h2>
+        <p>¿Qué dicen <span>sobre nosotros?</span></p>
+    </div>
+
+    <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                    <div class="col-lg-6">
+                    <div class="testimonial-content">
+                        <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        descripción
+                        <i class="bi bi-quote quote-icon-right"></i>
+                        </p>
+                        <h3>Nombre... (anonimo)</h3>
+                        <h4>Ceo &amp; Fundador</h4>
+                        <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-2 text-center">
+                    <img src="{% static 'img/testimonials/testimonials-1.jpg'%}" class="img-fluid testimonial-img" alt="">
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    </div>
+</section>-->
+
+<section id="chefs" class="chefs section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>Colaboradores</h2>
+            <p>Los <span>colaboradores</span> en el trabajo</p>
+        </div>
+
+        <div class="row gy-4">
+
+            {% for nombre, imagen_colab, colaboracion, descripcion in colaboradores_combinadas %}
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="chef-member">
+                <div class="member-img">
+                <img src="{% static imagen_colab %}" class="img-fluid" alt="">
+                <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+                </div>
+                <div class="member-info">
+                <h4>{{ nombre }}</h4>
+                <span>{{ colaboracion }}</span>
+                <p>{{ descripcion }}</p>
+                </div>
+            </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
 {% endblock %}

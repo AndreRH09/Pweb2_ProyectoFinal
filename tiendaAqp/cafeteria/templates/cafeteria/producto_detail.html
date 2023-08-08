@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section id="producto-detail" class="producto-detail">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>{{ producto.categoria.nombre }}</h2>
+            <p>{{ producto.nombre }}</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <img style="width: 600px; height: 350px; object-fit: cover;" src="{% static producto.imagen %}" class="img-fluid producto-img" alt="{{ producto.nombre }}">
+            </div>
+            <div class="col-lg-6">
+                <div class="producto-info">
+                    <h3>Descripción</h3>
+                    <p>{{ producto.descripcion }}</p>
+                    <h3>Precio</h3>
+                    <p class="precio">{{ producto.precio }}</p>
+                    <h3>Categoría</h3>
+                    <p>{{ producto.categoria.nombre }}</p>
+                    <p class="btn btn-primary btn-lg">
+                        <a href="">Comprar ahora</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

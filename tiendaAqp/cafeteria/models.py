@@ -27,13 +27,13 @@ class Categoria(models.Model):
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=100)
-    imagen = models.ImageField(upload_to='pics')
+    imagen = models.ImageField(upload_to='cafeteria/static/img/productos')
     descripcion = models.TextField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE)
 
     def get_absolute_url(self):
-        return reverse('producto-detail', args=[str(self.id)])
+        return reverse('producto', args=[str(self.id)]) # debe ser igual a name de view
     
     def __str__(self):
         return self.nombre

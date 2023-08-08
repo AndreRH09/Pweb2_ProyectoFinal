@@ -15,7 +15,7 @@
                     <div class="row gy-5">
                         {% for producto in producto_list %}
                         <div class="col-lg-4 menu-item">
-                            <a href="" class="glightbox"><img src="{{ producto.imagen }}" class="menu-img img-fluid" alt=""></a>
+                            <a href="" class="glightbox"><img src="{% static producto.imagen %}" class="menu-img img-fluid" alt=""></a>
                             <h4>{{ producto.nombre }}</h4>
                             <p class="ingredients">
                                 {{ producto.descripcion }}
