@@ -1,23 +1,12 @@
 from django.urls import include, path
 from . import views
+from rest_framework import routers
+from rest_framework.documentation import include_docs_urls
 
-from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
-
-# Serializers define the API representation.
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'is_staff']
-
-# ViewSets define the view behavior.
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-# Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
+router.register(r'users', views.UserViewSet)
+router.register(r'categorias', views.CategoriaViewSet)
+router.register(r'productos', views.ProductoViewSet)
 
 
 urlpatterns = [
@@ -27,6 +16,8 @@ urlpatterns = [
     path('produto/<int:pk>', views.ProductoDetailView.as_view(), name='producto'),
     path('pedidos/', views.PedidoListView.as_view(), name = 'pedidos'),# falta implementar
     path('addCliente/', views.clienteCreateView, name = 'addcliente'),
+    #paraoteraciones crud
     path('apiRest/', include('rest_framework.urls')),
-    path('a/', include(router.urls), name='administrar'),
+    path('administracion/', include(router.urls), name='administrar'),
+    path('doc/', include_docs_urls(title='documentacion')),
 ]

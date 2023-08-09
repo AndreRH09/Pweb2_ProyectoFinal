@@ -3,6 +3,9 @@ from django.views import generic
 from .models import * # cliente, categoria, producto, pedido, itempedido, carrito, itemcarrito, reserva
 from django.shortcuts import get_object_or_404
 from .forms import RawClienteForm
+from rest_framework import viewsets
+from .serializer import * # ProductoSerializer
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -73,7 +76,7 @@ class PedidoListView(generic.ListView):
         total = sum(pedido.total_monto(self) for pedido in Pedido.objects.all())
         return total
 
-    ## vistas detalladas 
+## vistas detalladas 
 class ProductoDetailView(generic.DetailView):
     model = Producto
 
@@ -95,3 +98,17 @@ def clienteCreateView(request):
         'form' : form
     }
     return render(request, 'cafeteria/cliente_create.html', context)
+
+#djangorest (CRUD)
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class CategoriaViewSet(viewsets.ModelViewSet):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
+
+class ProductoViewSet(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+    
