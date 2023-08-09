@@ -1,7 +1,31 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-    <form method="POST"> {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Registrarte">
-    </form>
+    <section id="book-a-table" class="book-a-table">
+        <div class="container" data-aos="fade-up">
+            <div class="section-header">
+                <h2>Registro</h2>
+                <p><span>Registrate</span> para adquirir lo que más te guste.</p>
+            </div>
+
+            <div class="row g-0">
+                <div class="col-lg-6 reservation-img" style="background-image: url({% static 'img/latte.png' %});"
+                    data-aos="zoom-out" data-aos-delay="200">
+                </div>
+                
+                <div class="col-lg-6 d-flex align-items-center reservation-form-bg">
+                    
+                    <div class="book-a-table" style="font-weight: 600; background: #df1529; color: white; text-align: center">
+                    {% for message in messages %}
+                    <h3>{{ message }}</h3>
+                    {% endfor %}
+                    </div>
+                    <form method="POST"> {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value="Registrarte">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

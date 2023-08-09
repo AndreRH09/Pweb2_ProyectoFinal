@@ -2,12 +2,6 @@
 from django import forms
 from .models import Cliente
 
-class ClienteForm(forms.ModelForm):
-    class Meta:
-        model = Cliente
-        fields = ['nombre', 'email', 'telefono']
-        
-
 class RawClienteForm(forms.Form):
     nombre = forms.CharField(label='Nombre', 
         widget=forms.TextInput(
@@ -19,5 +13,24 @@ class RawClienteForm(forms.Form):
             
         )
     )
-    email = forms.EmailField()
-    telefono = forms.IntegerField()
+    
+    email = forms.EmailField(
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder':'ingresa tu email',
+                'id': 'email',
+                'class': 'special'
+            }
+            
+        )
+    )
+    telefono = forms.IntegerField(
+        widget=forms.NumberInput(
+            attrs={
+                'placeholder':'ingresa tu telefono',
+                'id': 'telefono',
+                'class': 'special'
+            }
+            
+        )
+    )
