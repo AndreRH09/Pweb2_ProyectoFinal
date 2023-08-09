@@ -18,6 +18,7 @@ from django.urls import path,include
 from . import views
 urlpatterns = [
     path('', views.home, name='home'),
-    path('pdf/', views.listaProductos.as_view(), name='lista'),
+    path('verMenu/', views.VerMenuPdf.as_view(), name='verPdf'),
+    path('descargarMenu/', views.DescargarMenu.as_view(), name='descargarPdf'),
 
 ]
