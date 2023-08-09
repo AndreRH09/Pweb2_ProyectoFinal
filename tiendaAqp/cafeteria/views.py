@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from .models import * # cliente, categoria, producto, pedido, itempedido, carrito, itemcarrito, reserva
 from django.shortcuts import get_object_or_404
+from .forms import RawClienteForm
 
 # Create your views here.
 
@@ -79,3 +80,18 @@ class ProductoDetailView(generic.DetailView):
 def producto_detail_view(request, primary_key):
     producto = get_object_or_404(Producto, pk=primary_key)
     return render(request, 'cafeteria/producto_detail.html', context={'producto': producto})
+
+def clienteCreateView(request):
+    form = RawClienteForm()
+    if(request.method == 'POST'):
+        form = RawClienteForm(request.POST)
+        if(form.is_valid()):
+            print(form.cleaned_data)
+            Cliente.objects.create(**form.cleaned_data)
+        else:
+            print(form.errors)
+    
+    context = {
+        'form' : form
+    }
+    return render(request, 'cafeteria/cliente_create.html', context)
