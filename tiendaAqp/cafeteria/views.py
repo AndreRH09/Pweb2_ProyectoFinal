@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from .models import * # cliente, categoria, producto, pedido, itempedido, carrito, itemcarrito, reserva
 from django.shortcuts import get_object_or_404
-from .forms import RawClienteForm
+from .forms import RawClienteForm, RawPedidoForm
 from rest_framework import viewsets
 from .serializer import * # ProductoSerializer
 from django.contrib.auth.models import User
@@ -72,13 +72,17 @@ class ReservaMesaListView(generic.ListView):
 class PedidoListView(generic.ListView):
     model = Pedido
     
-    def pedidos_monto_total(self):
-        total = sum(pedido.total_monto(self) for pedido in Pedido.objects.all())
+    def pedidos_monto_total(self, obj):
+        total = sum(item.subtotal() for item in obj.itempedido_set.all())
         return total
 
 ## vistas detalladas 
 class ProductoDetailView(generic.DetailView):
     model = Producto
+
+class PedidoDetailView(generic.DetailView):
+    model = Pedido
+
 
 def producto_detail_view(request, primary_key):
     producto = get_object_or_404(Producto, pk=primary_key)
@@ -91,6 +95,7 @@ def clienteCreateView(request):
         if(form.is_valid()):
             print(form.cleaned_data)
             Cliente.objects.create(**form.cleaned_data)
+            return redirect('index')
         else:
             print(form.errors)
     
@@ -111,4 +116,8 @@ class CategoriaViewSet(viewsets.ModelViewSet):
 class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
+
+class PedidoViewSet(viewsets.ModelViewSet):
+    queryset = Pedido.objects.all()
+    serializer_class = PedidoSerializer
     

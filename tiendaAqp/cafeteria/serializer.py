@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Producto, Categoria
+from .models import Producto, Categoria, Pedido
 from django.contrib.auth.models import User
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -17,4 +17,9 @@ class ProductoSerializer(serializers.ModelSerializer):
     class Meta: 
         model = Producto
         # fields = ('nombre', 'descripcion', 'precio')
+        fields = '__all__' # todos los campos
+
+class PedidoSerializer(serializers.ModelSerializer):
+    class Meta: 
+        model = Pedido
         fields = '__all__' # todos los campos
