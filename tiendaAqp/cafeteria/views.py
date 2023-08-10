@@ -115,9 +115,6 @@ def pedidoCreateView(request):
         try:
             cliente = Cliente.objects.get(nombre=nombre, email=email)
         except Cliente.DoesNotExist:
-            # Si el cliente no existe, puedes manejarlo como quieras,
-            # por ejemplo, creando un nuevo cliente o mostrando un mensaje de error.
-            # Aquí lo redirecciono a una página donde puedan registrar un nuevo cliente.
             return redirect('addcliente')
         
         pedido = Pedido.objects.create(
@@ -128,7 +125,7 @@ def pedidoCreateView(request):
 
         return redirect('productos')
 
-    return render(request, 'producto_detail.html')
+    return render(request, 'cafeteria/producto_detail.html')
 
 #djangorest (CRUD)
 class UserViewSet(viewsets.ModelViewSet):

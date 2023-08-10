@@ -22,7 +22,7 @@
                     <p class="precio">{{ producto.precio }}</p>
                     <h3>Categoría</h3>
                     <p>{{ producto.categoria.nombre }}</p>
-                    <form id="comprar-form" action="{% url 'pedido' %}" method="post" class="php-email-form">
+                    <form id="comprar-form" action="{% url 'hacer_pedido' %}" method="post" class="php-email-form">
                         {% csrf_token %}
                         <div class="form-group">
                             <button id="comprar-btn" type="button" class="btn btn-primary btn-block">Comprar</button>

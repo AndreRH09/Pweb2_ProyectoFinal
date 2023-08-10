@@ -37,11 +37,6 @@
 
             <p class="mb-4"><strong>Total del pedido:</strong> ${{ pedidos_monto_total }}</p>
 
-            
-            <form method="post" action="">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-primary">Realizar Pedido</button>
-            </form>
             {% endfor %}
         {% else %}
             <p class="mt-4">No tienes pedidos en tu carrito...</p>

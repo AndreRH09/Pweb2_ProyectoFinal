@@ -15,9 +15,9 @@ urlpatterns = [
     path('produtos/', views.ProductoListView.as_view(), name = 'productos'),
     path('categorias/', views.CategoriaListView.as_view(), name = 'categorias'),
     path('produto/<int:pk>', views.ProductoDetailView.as_view(), name='producto'),
-    path('pedidos/', views.PedidoListView.as_view(), name = 'pedidos'),# falta implementar
+    path('pedidos/', views.PedidoListView.as_view(), name = 'pedidos'),
     path('addCliente/', views.clienteCreateView, name = 'addcliente'),
-    path('pedir/', views.pedidoCreateView, name='pedido'),
+    path('pedir/', views.pedidoCreateView, name='hacer_pedido'),
     #paraoteraciones crud
     path('apiRest/', include('rest_framework.urls')),
     path('administracion/', include(router.urls), name='administrar'),
