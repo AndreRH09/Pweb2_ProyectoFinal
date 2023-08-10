@@ -22,14 +22,36 @@
                     <p class="precio">{{ producto.precio }}</p>
                     <h3>Categoría</h3>
                     <p>{{ producto.categoria.nombre }}</p>
-                    <form method="post" class="php-email-form">
+                    <form id="comprar-form" action="{% url 'pedido' %}" method="post" class="php-email-form">
                         {% csrf_token %}
-                        {{ form.as_p }}
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Comprar</button>
-                            <input type="hidden" name="nombre" value="{{ producto.nombre }}">
+                            <button id="comprar-btn" type="button" class="btn btn-primary btn-block">Comprar</button>
+                        </div>
+                        <div id="cantidad-input" style="display: none;">
+                            <input type="hidden" name="producto_id" value="{{ producto.id }}">
+                            <hr>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre de registro">
+                            <hr>
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" placeholder="Ingresa tu email de registro">
+                            <hr>
+                            <label for="cantidad">Cantidad:</label>
+                            <input type="number" name="cantidad" id="cantidad" min="1" value="1">
+                            <button type="submit" class="btn btn-success">Confirmar Compra</button>
                         </div>
                     </form>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const comprarBtn = document.getElementById('comprar-btn');
+                            const cantidadInput = document.getElementById('cantidad-input');
+                        
+                            comprarBtn.addEventListener('click', function() {
+                                comprarBtn.style.display = 'none';
+                                cantidadInput.style.display = 'block';
+                            });
+                        });
+                        </script>
                 </div>
             </div>
         </div>

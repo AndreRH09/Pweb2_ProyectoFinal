@@ -104,6 +104,32 @@ def clienteCreateView(request):
     }
     return render(request, 'cafeteria/cliente_create.html', context)
 
+def pedidoCreateView(request):
+    if request.method == 'POST':
+        producto_id = request.POST.get('producto_id')
+        producto = Producto.objects.get(id=producto_id)
+        cantidad = int(request.POST.get('cantidad', 1))
+        nombre = request.POST.get('nombre')
+        email = request.POST.get('email')
+        
+        try:
+            cliente = Cliente.objects.get(nombre=nombre, email=email)
+        except Cliente.DoesNotExist:
+            # Si el cliente no existe, puedes manejarlo como quieras,
+            # por ejemplo, creando un nuevo cliente o mostrando un mensaje de error.
+            # Aquí lo redirecciono a una página donde puedan registrar un nuevo cliente.
+            return redirect('addcliente')
+        
+        pedido = Pedido.objects.create(
+            cliente=cliente,
+            estado='P'
+        )
+        pedido.productos.add(producto, through_defaults={'cantidad': cantidad})
+
+        return redirect('productos')
+
+    return render(request, 'producto_detail.html')
+
 #djangorest (CRUD)
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
