@@ -1,31 +1,57 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %}
-    <section id="book-a-table" class="book-a-table">
-        <div class="container" data-aos="fade-up">
-            <div class="section-header">
-                <h2>Registro</h2>
-                <p><span>Registrate</span> para adquirir lo que más te guste.</p>
-            </div>
 
-            <div class="row g-0">
-                <div class="col-lg-6 reservation-img" style="background-image: url({% static 'img/latte.png' %});"
-                    data-aos="zoom-out" data-aos-delay="200">
-                </div>
+{% block content %}
+
+<section id="book-a-table" class="book-a-table">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h2>Registro</h2>
+            <p>Únete a nuestra<span> comunidad</span>.</p>
+        </div>
+
+        <div class="row g-0">
+            <div class="col-lg-6 reservation-img" style="background-image: url({% static 'img/latte.png' %});"
+                data-aos="zoom-out" data-aos-delay="200">
+            </div>
+            
+            <div class="col-lg-6 d-flex align-items-center reservation-form-bg">
                 
-                <div class="col-lg-6 d-flex align-items-center reservation-form-bg">
-                    
-                    <div class="book-a-table" style="font-weight: 600; background: #df1529; color: white; text-align: center">
-                    {% for message in messages %}
-                    <h3>{{ message }}</h3>
-                    {% endfor %}
-                    </div>
-                    <form method="POST"> {% csrf_token %}
-                        {{ form.as_p }}
-                        <input type="submit" value="Registrarte">
-                    </form>
+                <div class="book-a-table" style="font-weight: 600; background: #df1529; color: white; text-align: center">
+                {% for message in messages %}
+                <h3>{{ message }}</h3>
+                {% endfor %}
                 </div>
+
+                <form method="POST"  class="php-email-form"> 
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="{{ form.nombre.id_for_label }}">{{ form.nombre.id_for_label }}</label>
+                        {{ form.nombre }}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.email.id_for_label }}">{{ form.email.id_for_label }}</label>
+                        {{ form.email }}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.telefono.id_for_label }}">{{ form.telefono.id_for_label }}</label>
+                        {{ form.telefono }}
+                    </div>
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        {% for error in form.non_field_errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Registrarte</button>
+                        <input type="hidden" name="next" value="{{ next }}">
+                    </div>
+                    
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}

@@ -7,6 +7,7 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'categorias', views.CategoriaViewSet)
 router.register(r'productos', views.ProductoViewSet)
+router.register(r'pedidos', views.PedidoViewSet)
 
 
 urlpatterns = [

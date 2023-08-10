@@ -22,9 +22,14 @@
                     <p class="precio">{{ producto.precio }}</p>
                     <h3>Categoría</h3>
                     <p>{{ producto.categoria.nombre }}</p>
-                    <p class="btn btn-primary btn-lg">
-                        <a href="">Comprar ahora</a>
-                    </p>
+                    <form method="post" class="php-email-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Comprar</button>
+                            <input type="hidden" name="nombre" value="{{ producto.nombre }}">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

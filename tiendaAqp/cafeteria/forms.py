@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import Cliente
+from .models import Pedido
 
 class RawClienteForm(forms.Form):
     nombre = forms.CharField(label='Nombre', 
@@ -8,7 +8,8 @@ class RawClienteForm(forms.Form):
             attrs={
                 'placeholder':'ingresa solo tu nombre',
                 'id': 'nombre',
-                'class': 'special'
+                'class': 'form-control',
+                'data-rule': 'minlen:1',
             }
             
         )
@@ -19,18 +20,34 @@ class RawClienteForm(forms.Form):
             attrs={
                 'placeholder':'ingresa tu email',
                 'id': 'email',
-                'class': 'special'
+                'class': 'form-control',
+                'data-rule': 'minlen:1',
             }
             
         )
     )
+    
     telefono = forms.IntegerField(
         widget=forms.NumberInput(
             attrs={
                 'placeholder':'ingresa tu telefono',
                 'id': 'telefono',
-                'class': 'special'
+                'class': 'form-control',
+                'data-rule': 'minlen:1',
             }
             
         )
     )
+
+#para pedidos
+class RawPedidoForm(forms.ModelForm):
+    class Meta:
+        model = Pedido
+        fields = ['cliente', 'productos', 'estado']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        
+        self.fields['cliente'].widget = forms.HiddenInput()
+        self.fields['productos'].widget = forms.HiddenInput()
+        self.fields['estado'].widget = forms.HiddenInput()

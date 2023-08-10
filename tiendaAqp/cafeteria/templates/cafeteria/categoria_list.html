@@ -34,7 +34,7 @@
                     <div class="row gy-5">
                         {% for producto in categoria.producto_set.all %}
                         <div class="col-lg-4 menu-item">
-                            <a href="" class="glightbox"><img src="{% static producto.imagen %}" class="menu-img img-fluid" alt=""></a>
+                            <a href="{{ producto.get_absolute_url }}" class="glightbox"><img src="{% static producto.imagen %}" class="menu-img img-fluid" alt=""></a>
                             <h4>{{ producto.nombre }}</h4>
                             <p class="ingredients">
                                 {{ producto.descripcion }}
@@ -42,9 +42,12 @@
                             <p class="price">
                                 {{ producto.precio }}
                             </p>
-                            <p class="btn btn-primary btn-lg">
-                                <a href="">comprar</a>
-                            </p>
+                            <form action="{{ producto.get_absolute_url }}" method="get" class="php-email-form">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Ver y Comprar</button>
+                                    <input type="hidden" name="next" value="{{ next }}">
+                                </div>
+                            </form>
                         </div>
                         {% endfor %}
                     </div>

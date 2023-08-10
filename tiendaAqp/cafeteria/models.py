@@ -27,7 +27,7 @@ class Categoria(models.Model):
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=100)
-    imagen = models.ImageField(upload_to='cafeteria/static/img/productos')
+    imagen = models.ImageField(upload_to='cafeteria/static/pics')
     descripcion = models.TextField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE)
@@ -52,9 +52,6 @@ class Pedido(models.Model):
 
     def get_estado_display(self):
         return dict(self.ESTADOS_PEDIDO)[self.estado]
-    
-    def total_monto(self, obj):
-        return sum(item.subtotal() for item in obj.itempedido_set.all())
     
     def __str__(self):
         return f"Pedido {self.cliente} - {self.id}"
